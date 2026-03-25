@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/health")
 def health():
-    return {"status": "RAG service running"}
+    return {"status": "Eligibility service running"}
