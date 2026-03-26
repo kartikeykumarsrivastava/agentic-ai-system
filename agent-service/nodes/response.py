@@ -7,18 +7,29 @@ llm = ChatOpenAI(
     model=MODEL_NAME,
     openai_api_key=OPENAI_API_KEY
 )
-
 def generate_response(state):
     prompt = f"""
-    User Query: {state['query']}
+You are a banking assistant.
 
-    Documents: {state.get('documents')}
-    Eligibility: {state.get('eligibility')}
-    Policy: {state.get('policy')}
+User Query:
+{state['query']}
 
-    Provide a clear structured answer.
-    """
+Available Data:
+- Documents: {state.get('documents')}
+- Eligibility: {state.get('eligibility')}
+- Policy: {state.get('policy')}
+
+Instructions:
+1. Use ONLY the provided data
+2. If eligibility exists → explain clearly
+3. If policy exists → summarize
+4. DO NOT say "Not Found"
+5. If data missing → skip it
+
+Provide a structured answer.
+"""
 
     response = llm.invoke(prompt)
 
-    return {"final_answer": response.content}
+    state["final_answer"] = response.content
+    return state
