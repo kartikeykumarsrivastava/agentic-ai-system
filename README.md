@@ -228,3 +228,9 @@ This phase establishes a **strong foundation** for building:
 * Scalable AI systems
 * Agent-driven workflows
 * Enterprise-grade architectures
+
+
+
+Data Flow Diagram the System.
+
+![alt text](image.png)

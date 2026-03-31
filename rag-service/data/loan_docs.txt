@@ -1,0 +1,6 @@
+# rag-service/data/loan_docs.txt
+
+Home loan requires minimum salary of 5 lakh per annum.
+Interest rate varies between 8% and 10%.
+Loan tenure can go up to 30 years.
+Higher salary increases loan eligibility.
